@@ -1,6 +1,6 @@
 ---
 - name: Install Apache on Remote
-  hosts: webservers
+  hosts: localhost
   become: yes  # run tasks as root
 
   tasks:
