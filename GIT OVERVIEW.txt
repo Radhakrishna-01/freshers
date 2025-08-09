@@ -1,0 +1,115 @@
+GIT OVERVIEW :
+
+GIT : Git is a version control system used to track changes in source code during software development
+
+1.It allows multiple developers to work on a project simultaneously, without overwriting each others work.
+
+2.It mainly helps in collaboration, rollback, tracking changes, and branching.
+
+STEP1- INSTALL GIT :
+
+sudo apt install git
+
+STEP2 - SET UP GIT(first time only)
+
+git config --global user.name "your name"
+
+git config --global user.email "your email"
+
+Note : These commands set your name and email, used in commits
+
+STEP3 - CREATE NEW GIT REPOSITORY
+
+mkdir myfirst-project
+
+cd myfirst-project
+
+git init
+
+NOTE : This creates an empty Git repository in the myfirst-project folder
+
+STEP4 - ADD A FILE AND TRACK IT
+
+touch file1
+
+git status (shows untracked/ modified files)
+
+git add file1 (stages the file)
+
+git commit -m " changes in the bug" file1 (saves a file in the repository)
+
+
+GIT STAGES :
+
+1.working directory : (if u create files it is called as tracked files comes under working area)
+
+2.staging directory : (Need to take it from working to staging area of the files)
+
+3.Repository : (If it is staging area then need to commit those files which we required)
+
+STEP5 - VIEW HISTORY
+
+git log - shows commit history
+
+IMPORTANT :
+
+1.If the files in staging area and don't want to commit and get back into working area give like this
+
+git restore --staged file1
+
+git restore --staged . (. means which and all the files present in the staging area comes into working area)
+
+STEP6 - .GITIGNORE
+
+1.It will be useful when you don't want to track some specific files then we use a file called .gitignore
+
+vi .gitignore
+
+after which files don't want to track then you can mention inside the vi editor
+
+ex: mention below format inside vi  and save it
+
+file1
+file2
+
+
+IMPORTANT :
+
+By mistakenly we deleted few files in staging area we have an option to restore again
+
+git restore filenames
+
+
+GIT BRANCHING :
+
+Branching in git allows you to:
+
+1. Work on new features, bug fixes, or experiments without effecting the main (production) code.
+2. Merge changes back once yo are done.
+
+# Check current branch
+git branch
+
+# Create and switch to a new branch
+git checkout -b feature-search
+
+# Make changes and commit
+echo "Search feature" > search.txt
+git add search.txt
+git commit -m "Added search feature"
+
+# Go back to main branch
+git checkout main
+
+# Merge changes from feature-search into main
+git merge feature-search
+
+# Delete feature branch
+git branch -d feature-search (if not delete use -D)
+
+# Rename the branch
+git branch -m old new
+
+NOTE : If you are in current branch then try to delete it won't work move to another branch then delete that branch) 
+
+
